@@ -4,10 +4,17 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 14px;
 }
+body.night {
+  background-color: #333;
+}
 
 #header {
+  position: relative;
   background-color: #579BB1;
   color: #F7F5EB;
+}
+body.night #header {
+  background-color: #205263;
 }
 .container {
   margin: 0 auto;
@@ -34,7 +41,19 @@ header .container {
 .hCenter {
   font-weight: 700;
 }
-
+header .modeToggleBox {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  top: 0;
+  right:0;
+  padding: 0 30px;
+}
+.modeToggleBox #modeToggleBtn {
+  width: 26px;
+  height: 26px;
+}
 .page .inputBox {
   text-align: center;
   margin: 20px 0;
@@ -51,4 +70,8 @@ header .container {
   border: 1px solid #ebebeb;
   border-bottom-color: #e2e2e2;
   border-radius: .25em;
+}
+body.night .page .inputBox label {
+  background-color: #919191;
+  color: rgb(221, 221, 221);
 }

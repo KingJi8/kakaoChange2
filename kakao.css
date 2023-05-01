@@ -4,11 +4,12 @@
   margin: 0 auto;
   padding: 20px;
   display: none;
-  width: 400px;
+  max-width: 400px;
+  min-width: 300px;
   height: 700px;;
   text-align: left;
   border-radius: 30px;
-  background-color: #b5dce8;
+  background-color: #579BB1;
   overflow: scroll;
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
@@ -21,21 +22,22 @@
   display: none;
 }
 
-  
+/* 카톡 버블 */
 #txtlog .kTalkBox {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: end;
   flex-wrap: wrap;
-}
-#txtlog .kTalkBox.left {
-  justify-content: left;
   text-align: left;
 }
+#txtlog .kTalkBox.left {
+  text-align: left;
+  justify-content: left;
+}
 #txtlog .kTalkBox.right {
-  justify-content: right;
   text-align: right;
+  justify-content: right;
 }
 #txtlog .kTalkBox .kkotxtbox {
   display: flex;
@@ -60,55 +62,89 @@
   display: block;
   width: 100%;
   margin: 14px 0 10px;
+  color: #fff;
 }
 .kTalkBox .kkotxt {
   position: relative;
+  text-align: left;
   display: inline-block;
   max-width:250px;
   padding: 8px 14px;
   margin-bottom: 8px;
-  background-color: #fff;
+  background-color: #E1D7C6;
   border-radius: 12px;
   line-height: 1.4;
   word-break: break-all;
 }
-.kTalkBox.active .kkotxt:after {
-  content: '';
-  position: absolute;
-  width:0;
-  height:0;
-  border: 20px solid transparent;
+.kTalkBox.right .kkotxt {
+  background-color: #ECE8DD;
 }
 .kTalkBox .kkodate {
   display: inline-block;
   margin-bottom: 8px;
   min-width: 56px;
   font-size: 0.7rem;
-  color: #777777;
-}
-
-.kTalkBox.active.left .kkotxt:after {
-  border-right-color: #fff;
-  top: 8px;
-  left: 12px;
-  border-left: 0;
-  border-top: 0;
-  margin-bottom: -10px;
-  margin-left: -20px;
+  color: #F8F4EA;
 }
 .kTalkBox.left .kkodate {
   margin-left: 6px;
 }
-
-.kTalkBox.active.right .kkotxt:after {
-  border-left-color: #fff;
-  top: 8px;
-  right: 12px;
-  border-right: 0;
-  border-top: 0;
-  margin-bottom: -10px;
-  margin-right: -20px;
-}
 .kTalkBox.right .kkodate {
   margin-right: 6px;
+}
+
+/* 말풍선꼬리 */
+.kTalkBox.active .kkotxt:after {
+  content: '';
+  position: absolute;
+  width:0;
+  height:0;
+  border: 20px solid transparent;
+  top: 8px;
+  border-top: 0;
+  margin-bottom: -10px;
+}
+.kTalkBox.active.left .kkotxt:after {
+  border-right-color: #E1D7C6;
+  left: 12px;
+  border-left: 0;
+  margin-left: -20px;
+}
+.kTalkBox.active.right .kkotxt:after {
+  border-left-color: #ECE8DD;
+  right: 12px;
+  border-right: 0;
+  margin-right: -20px;
+}
+
+/* 밤 모드 */
+#txtlog.night {
+  background-color: #212A3E;
+}
+
+#txtlog.night .kTalkBox .kkodatebox {
+  background-color: rgba(241, 246, 249, 0.05);
+  color: #9BA4B5;
+}
+
+#txtlog.night .kTalkBox .kkoname {
+  color: #F1F6F9;
+}
+#txtlog.night .kTalkBox .kkodate {
+  color: #9BA4B5;
+}
+
+#txtlog.night .kTalkBox .kkotxt {
+  background-color: #394867;
+  color: #F1F6F9;
+}
+#txtlog.night .kTalkBox.active.left .kkotxt:after {
+  border-right-color: #394867;
+}
+#txtlog.night .kTalkBox.right .kkotxt {
+  background-color: #53678A;
+  color: #F1F6F9;
+}
+#txtlog.night .kTalkBox.active.right .kkotxt:after {
+  border-left-color: #53678A;
 }

@@ -20,18 +20,26 @@
     <div class="container">
       <div class="hCenter">카톡 대화 간편 보기</div>
     </div>
+    <div class="modeToggleBox">
+      <img src="./sunny-outline.png" alt="mode toggle 버튼" id="modeToggleBtn">
+    </div>
   </header>
   <div class="page">
     <div class="inputBox">
-      <label for="getFileBtn">카톡 대화 파일 업로드</label>
-      <input type="file" id="getFileBtn" accept=".txt">
+      <label for="getFileStart">처음부터 보기</label>
+      <input type="file" id="getFileStart" class="getFileBtn" accept=".txt">
+      <label for="getFileEnd">끝부터 보기</label>
+      <input type="file" id="getFileEnd" class="getFileBtn" accept=".txt">
     </div>
     <div class="container">
       <div id="txtlog">
       </div>
     </div>
   </div>
-  <script src="./fromStart.js"></script>
+  <script src="./main.js"></script>
+  <script src="./makeBubble.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
